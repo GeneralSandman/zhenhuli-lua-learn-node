@@ -14,6 +14,24 @@ typedef struct Upvalue Upvalue;
 typedef struct LocVar LocVar;
 
 
+const std::string LUA_SIGNATURE    = "\x1bLua";
+const int LUAC_VERSION             = 0x53;
+const int LUAC_FORMAT              = 0;
+const std::string LUAC_DATA        = "\x19\x93\r\n\x1a\n";
+const int CINT_SIZE                = 4;
+const int CSIZET_SIZE              = 8;
+const int INSTRUCTION_SIZE         = 4;
+const int LUA_INTEGER_SIZE         = 8;
+const int LUA_NUMBER_SIZE          = 8;
+const int LUAC_INT                 = 0x5678;
+const double LUAC_NUM              = 370.5;
+
+const int TAG_NIL       = 0x00;
+const int TAG_BOOLEAN   = 0x01;
+const int TAG_NUMBER    = 0x03;
+const int TAG_INTEGER   = 0x13;
+const int TAG_SHORT_STR = 0x04;
+const int TAG_LONG_STR  = 0x14;
 
 struct Header {
     byte signature[4];
@@ -58,3 +76,94 @@ struct LocVar {
     uint32 StartPC;
     uint32 EndPC;
 };
+
+typedef enum {
+    CONSTANT_TYPE_NIL,
+    CONSTANT_TYPE_BOOLEAN,
+    CONSTANT_TYPE_INTEGER,
+    CONSTANT_TYPE_NUMBER,
+    CONSTANT_TYPE_SHORT_STR,
+    CONSTANT_TYPE_LONG_STR,
+} Constant_Type;
+
+struct Constant {
+    Constant_Type type;
+    union {
+        byte byte_value;
+        bool bool_value;
+        int64_t int_value;
+        float64 number_value;
+    } u;
+};
+
+
+void Undump(byte data, size_t size, Prototype* proto) {
+
+}
+
+
+byte readByte() {
+
+}
+
+std::vector<byte> readBytes() {
+
+}
+
+uint32_t readUint32() {
+
+}
+
+uint64_t readUint64() {
+
+}
+
+int64_t readLuaInteger() {
+
+}
+
+float64 readLuaNumber() {
+
+}
+
+std::string readString() {
+
+}
+
+void checkHeader() {
+
+}
+
+void readProto(Prototype* proto) {
+
+}
+
+std::vector<uint32> readCode() {
+
+}
+
+std::vector<Constant> readConstants() {
+
+}
+
+void readConstants(Constant* constant) {
+
+}
+
+
+
+std::vector<Prototype> readProtos() {
+    
+}
+
+std::vector<uint32> readLineInfo() {
+
+}
+
+std::vector<LocVar> readLocVars() {
+    
+}
+
+std::vector<string> readUpvalueNames() {
+
+}
