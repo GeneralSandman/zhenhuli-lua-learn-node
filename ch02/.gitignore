@@ -1,3 +1,5 @@
 helloworld.luac
 
-lua_binchunk_parser
+lua_binchunk_parser_go
+
+lua_binchunk_parser_cpp
