@@ -164,6 +164,29 @@ std::vector<LocVar> readLocVars() {
     
 }
 
-std::vector<string> readUpvalueNames() {
+std::vector<std::string> readUpvalueNames() {
+
+}
+
+int main() {
+    // read content from binary file
+    std::string inputFileName = "./helloworld.luac";
+
+    FILE* input = NULL;
+    input = fopen(inputFileName.c_str(), "rb");
+    if(input == NULL) {
+        exit(1);
+    }
+
+    size_t buffer_size = 1024*1024;
+    void* buffer = malloc(sizeof(byte)*buffer_size);
+
+
+    size_t read_size = fread(buffer, buffer_size, 100, input);
+
+    std::cout << "read_size:" << read_size << std::endl;
+
+
+    free(buffer);
 
 }
