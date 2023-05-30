@@ -95,50 +95,6 @@ struct Constant {
     } u;
 };
 
-
-void Undump(byte data, size_t size, Prototype* proto) {
-
-}
-
-
-void checkHeader() {
-
-}
-
-void readProto(Prototype* proto) {
-
-}
-
-std::vector<uint32> readCode() {
-
-}
-
-std::vector<Constant> readConstants() {
-
-}
-
-void readConstants(Constant* constant) {
-
-}
-
-
-
-std::vector<Prototype> readProtos() {
-    
-}
-
-std::vector<uint32> readLineInfo() {
-
-}
-
-std::vector<LocVar> readLocVars() {
-    
-}
-
-std::vector<std::string> readUpvalueNames() {
-
-}
-
 std::string byte_to_string(std::vector<byte>& bytes) {
     std::string result;
     for(auto byte_value: bytes) {
@@ -304,6 +260,39 @@ public:
         std::cout << "checkHeader success" << std::endl;
         return 0;
         
+    }
+
+    void readProto(Prototype* proto) {
+        
+    }
+
+    std::vector<uint32> readCode() {
+
+    }
+
+    std::vector<Constant> readConstants() {
+
+    }
+
+    void readConstants(Constant* constant) {
+
+    }
+
+
+    std::vector<Prototype> readProtos() {
+
+    }
+
+    std::vector<uint32> readLineInfo() {
+
+    }
+
+    std::vector<LocVar> readLocVars() {
+
+    }
+
+    std::vector<std::string> readUpvalueNames() {
+
     }
 
     void undump() {
