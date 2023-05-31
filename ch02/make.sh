@@ -7,6 +7,10 @@ luac -o helloworld.luac helloworld.lua
 go build -o lua_binchunk_parser_go main.go
 
 
+echo "=============luac=============\n"
+luac -l ./helloworld.luac
+
+
 echo "=============lua_binchunk_parser_go=============\n"
 ./lua_binchunk_parser_go ./helloworld.luac
 

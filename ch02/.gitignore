@@ -1,5 +1,7 @@
 helloworld.luac
 
+luac.out
+
 lua_binchunk_parser_go
 
 lua_binchunk_parser_cpp
